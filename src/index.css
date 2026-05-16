@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-black: #1A1A1A;
+  --color-brand-red: #DC2626;
+  --color-brand-bg: #F9F8F6;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-bg text-brand-black;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight uppercase;
+  }
+}
+
+/* Artistic Flair Utility Components */
+.brutalist-card {
+  @apply bg-white border-2 border-brand-black shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] transition-all hover:shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:-translate-x-1 hover:-translate-y-1;
+}
+
+.brutalist-border-b {
+  @apply border-b-2 border-brand-black;
+}
+
+.brutalist-border-r {
+  @apply border-r-2 border-brand-black;
+}
+
+.brutalist-button {
+  @apply bg-brand-black text-white px-4 py-2 font-bold uppercase tracking-widest text-xs border-2 border-brand-black hover:bg-white hover:text-brand-black transition-all active:translate-x-0.5 active:translate-y-0.5 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:shadow-none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.markdown-content h1 { @apply text-2xl font-black mb-4 uppercase; }
+.markdown-content h2 { @apply text-xl font-black mb-3 uppercase; }
+.markdown-content p { @apply mb-3 leading-relaxed font-serif italic; }
+.markdown-content ul { @apply list-disc list-inside mb-3 space-y-1; }
+.markdown-content ol { @apply list-decimal list-inside mb-3 space-y-1; }
+.markdown-content blockquote { @apply border-l-4 border-brand-red pl-4 italic text-slate-500 mb-3 font-serif; }
+.markdown-content code { @apply bg-slate-100 px-1 rounded text-brand-red font-mono text-xs; }
